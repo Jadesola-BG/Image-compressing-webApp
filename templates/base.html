@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Image compresser</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" 
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+   </script>
+  </head>
+  <body>
+        <nav class="nav-body">
+          <ul class="nav-menu">
+            <li class="nav-title">
+              <img class = "main-icon" src="../static/images/icon.png" alt="">
+              <span class = "main-name"> SQUASH</span> 
+            </li>
+            <li class="toggle">
+              <i class="fas fa-bars"></i>
+            </li>  
+            <li class="toggleCancel">
+              <i class="fas fa-times"></i>
+            </li>    
+            <li class="nav-item">
+              <a href="#"> Home </a>
+            </li>
+            <li class="nav-item">
+              <a href="#"> About </a>
+            </li>
+          </ul>
+
+        </nav>
+
+        <script type= "text/javascript" src="{{url_for('static', filename='js files/script.js')}}"></script>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <footer class="footer">
+      <ul class="socials">
+        <li><a href="#"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+     </ul>
+
+     <div class="footer-bottom">
+      <p>Jadesola Adedokun &copy; 2022</p>
+     </div>
+    </footer>
+  
+  </body>
+</html>
