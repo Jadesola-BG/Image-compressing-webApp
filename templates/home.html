@@ -13,6 +13,28 @@
 
 </div>
 
+<div class="flashed-messages">
+    <p>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+            {% endif %}
+        {% endwith %}
+    </p>
+</div>
+
+<div class="upload-container">
+    <h3> Upload your Image</h3>
+    <form method="post" action="/" enctype="multipart/form-data">
+        <p class="image-upload"><input type="file" name="uploaded_image"> </p>
+        <p class="image-upload"><input type="submit" value="Upload"></p>
+    </form>
+</div>
+
 <div class="side">
     <p> 
         Squash image compressor is a user friendly and easy to use image compressor. <br/>

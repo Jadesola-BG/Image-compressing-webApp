@@ -59,17 +59,29 @@ body{
     padding: 50px 5px 0;
     text-align: center;
 }
+.flashed-messages{
+    text-align: center;
+    color:red;
+    margin-top: 20px;
+}
+.upload-container{
+    text-align: center;
+    border: 3px dotted rgb(37, 67, 65);
+    margin: 60px 550px;
+    padding: 20px;
+}
+.image-upload{
+    margin-top: 30px ;
+}
 .side{
     text-align: center;
     padding:20px;
-    margin-top: 60px;
-    margin-left: 50px;
+    margin: 60px 0px 100px 50px;
     background-color:rgb(73, 114, 112) ;
     border: 1px solid rgb(123, 191, 170);
     border-radius: 10px;
     list-style: inside;
     width: 40%;
-    border: 1px solid red;
 }
 .side p{
     color:beige;
@@ -79,10 +91,10 @@ body{
 }
 .footer{
     background: rgb(55, 93, 77);
-    height: 64px;
+    height: 100%;
     width: 100%;
     color: #fff; 
-    position: fixed;
+    margin-top: 10px;
     bottom: 0;
 }
 .socials{
@@ -90,10 +102,9 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
 }
 .socials li{
-    margin: 0 10px;
+    margin: 8px;
 }
 .socials li a{
     text-decoration: none;
@@ -110,12 +121,21 @@ body{
     background: rgb(37, 67, 65);
     width: 100%;
     bottom: 0;
-    margin-top: 7px;
+    margin-top: 0px;
     text-align: center;
 }
 .footer-bottom p{
     color: beige;
 }
+
+/*tablet  styling */
+@media (max-width: 1300px){
+    .upload-container{
+        margin: 60px 400px;
+        padding: 20px;
+}
+}
+
 /*mobile styling */
 @media (max-width: 600px){
     .nav-body ul{
@@ -139,99 +159,18 @@ body{
     }
     .side{
         text-align: center;
-        padding:20px;
-        margin-top: 60px;
-        margin-left: 40px;
+        padding:10px;
+        margin: 60px 37px 70px;
         background-color:rgb(73, 114, 112) ;
         border: 1px solid rgb(123, 191, 170);
         border-radius: 10px;
         width: 80%;
     }
+    .upload-container{
+        margin: 40px 20px;
+        padding: 20px;
+    }
     .footer{
         margin-top: 50px;
     }
 }
-/* Basic styling 
-*{
-    box-sizing:border-box;
-    padding: 0;
-    margin: 0;
-}
-
-body{
-    font-family:'Times New Roman', Times, serif;
-}
-
-.nav-body{
-    background: rgb(193, 172, 196);
-    height: 60px; 
-}
-
-a{
-    color: rgb(64, 40, 87);
-    text-decoration: none;
-}
-
-.nav-menu{
-    list-style-type: none;
-}
-.nav-title{
-    margin-left:10px;
-    padding-bottom: 10px;
-    color:rgb(53, 80, 80);
-}
-.main-name{
-    font-size: 27px; 
-}
-
-.main-icon{
-    height: 40px;
-    margin-top: 4px;  
-}
-
-.nav-menu li a:hover, .nav-menu li span:hover{
-    color:aqua;
-    transition: 5s;
-}
-
-/*mobile menu 
-.nav-menu{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-between; 
-    align-items: center; 
-}
-
-.nav-item, .toggle{
-    margin-top: 7px;
-    padding: 13px 0px;
-}
-
-.nav-item a{
-    font-size: 20px;
-}
-
-.toggle{
-    order: 1;
-    font-size: 25px;
-    padding-right: 15px;
-    border: 1px solid red; 
-}
-
-.nav-item{
-    border: 1px solid red; 
-    width: 100%;
-    text-align: center;
-}
-
-
-/* Desktop menu 
-@media all and (min-width: 700px) {
-    .nav-menu{
-        align-items: flex-start;
-        flex-wrap: nowrap;
-        background: none;
-    }
-
-}
-*/
