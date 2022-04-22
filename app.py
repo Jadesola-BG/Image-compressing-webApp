@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 from werkzeug.utils import secure_filename
 from compress import compress_image
@@ -23,10 +24,7 @@ def too_large(e):
 @app.route('/')
 def home():
     return render_template('home.html')
-
-@app.before_request
-def before_request_func():
-    print("COMPRESSING IMAGE !!!")
+    
 
 @app.route('/', methods=['POST'])
 def image_upload():
@@ -44,14 +42,19 @@ def image_upload():
         image_name = secure_filename(image.filename)
         image.save(os.path.join(app.config['UPLOAD_FOLDER'], image_name))
         flash('Image successfully uploaded !!! ')
-        #image compression operation
-        #rendering html file that will show original and compressed images
-        return render_template('')
+        flash("COMPRESSING IMAGE !!!")
+        
+        results = compress_image(image_name, app.config['UPLOAD_FOLDER'])
+
+        
+        return render_template('display.html', results = results)
 
     else:
         flash('Please ensure you uploaded only the allowed file types.')
         return redirect(request.url)
         #return "Invalid image", 400
+    #removing uploaded image
+    os.remove(image_name)
     return render_template("home.html")
 
 
