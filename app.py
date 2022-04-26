@@ -23,6 +23,10 @@ def too_large(e):
 @app.route('/')
 def home():
     return render_template('home.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
     
 def clean_uploadfolder():
     imagelist = [img for img in os.listdir(app.config['UPLOAD_FOLDER']) if not img.startswith("icon")]
@@ -46,7 +50,7 @@ def image_upload():
         clean_uploadfolder()
         image_name = secure_filename(image.filename)
         image.save(os.path.join(app.config['UPLOAD_FOLDER'], image_name))
-        flash('Image successfully uploaded & Compressing !!! ')
+        flash('Image successfully uploaded & Compressed !!! ')
         #image compressing operation
         results = compress_image(image_name, app.config['UPLOAD_FOLDER'])
         return render_template('display.html', results = results)
@@ -63,4 +67,4 @@ def download_image(filename):
     
 
 if __name__  == '__main__':
-    app.run()
+    app.run(debug=True)
