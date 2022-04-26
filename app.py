@@ -7,7 +7,7 @@ OUTPUT_PATH = 'static/images/'
 
 #initilizing flask application
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'hiii'
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 app.config['UPLOAD_FOLDER'] = OUTPUT_PATH
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
@@ -67,4 +67,4 @@ def download_image(filename):
     
 
 if __name__  == '__main__':
-    app.run(debug=True)
+    app.run()
