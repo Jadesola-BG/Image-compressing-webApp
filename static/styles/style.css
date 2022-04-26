@@ -9,6 +9,10 @@ body{
     position: relative;
     min-height: 100vh;
 }
+.content{
+    margin-bottom: 50vh;
+}
+
 .nav-title img{
     width:30px;
     height:30px;
@@ -65,7 +69,7 @@ body{
     color:red;
     margin-top: 20px;
 }
-.upload-container{
+.upload-container, .download{
     text-align: center;
     border: 3px dotted rgb(37, 67, 65);
     margin: 60px 550px;
@@ -73,6 +77,18 @@ body{
 }
 .image-upload{
     margin-top: 30px ;
+}
+input[type=submit], .download-button{
+    padding: 10px 20px;
+    color: beige;
+    background: rgb(73, 114, 112);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input[type=submit]:hover, .download-button:hover{
+    background: rgb(37, 67, 65);
+    
 }
 .side{
     text-align: center;
@@ -90,15 +106,14 @@ body{
 .step-item{
     color: beige;
 }
+
 .images-display img{
-    align-items: center;
     width:300px;
     height:300px;
-    margin: 50px;
-    border: 1px solid red;
+    margin: 50px 50px 0px ;
 }
 .images-display p{
-    margin: 50px;
+    margin: 0px 50px;
 }
 .footer{
     background: rgb(55, 93, 77);
@@ -139,17 +154,32 @@ body{
     color: beige;
 }
 
+
+
 /*tablet  styling */
-@media (max-width: 1300px){
-    .upload-container{
+@media (max-width: 1300px) and (min-width: 700px){
+    .upload-container, .download{
         margin: 60px 400px;
         padding: 20px;
 }
+.images-display{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 }
 
+/*laptop styling */
+@media(min-width: 1300px){
+    .images-display{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
 /*ipad  styling */
 @media (max-width: 850px){
-    .upload-container{
+    .upload-container, .download{
         margin: 60px 250px;
         padding: 20px;
 }
@@ -176,6 +206,17 @@ body{
     .show{
         display: block;
     }
+    
+    .images-display img{
+        margin-bottom: 10px;
+        margin-left: 50px;
+        width:250px;
+        height:250px;
+        border: 1px solid red;
+    }
+    .images-display p{
+        margin: 0px 50px 0 190px;
+    }
     .side{
         text-align: center;
         padding:10px;
@@ -185,7 +226,7 @@ body{
         border-radius: 10px;
         width: 80%;
     }
-    .upload-container{
+    .upload-container, .download{
         margin: 40px 20px;
         padding: 20px;
     }

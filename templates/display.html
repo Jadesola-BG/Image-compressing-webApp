@@ -2,35 +2,48 @@
 
 {% block content %}
 
-<div class="flashed-messages">
-    <p>
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <ul>
-                    {% for message in messages %}
-                        <li>{{ message }}</li>
-                    {% endfor %}
-                    </ul>
-            {% endif %}
-        {% endwith %}
-    </p>
-</div>
+<div class="content">
 
-<div class="images-display">
-    <img src= "{{ url_for('static', filename='images/compressed_'+ results[0]) }}"  alt="">
-
-    {% with compressed_size = results[1] / 1024 %}
-        {% if compressed_size > 1000 %}
-            {% with compressed_size_mb = compressed_size / 1000 %}
-                <p> {{ "{:.2f}".format(compressed_size_mb) }} MB </p>
+    <div class="flashed-messages">
+        <p>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                        </ul>
+                {% endif %}
             {% endwith %}
-        {% else %}
-            <p> {{ "{:.2f}".format(compressed_size) }} KB </p>
-        {% endif %}
-    {% endwith %}
-   
-    <img src= "{{ url_for('static', filename='images/'+ results[0]) }}"  alt="">
-    <p> {{"{:.2f}".format(results[2]/ 1048576) }} MB </p>
-</div>
+        </p>
+    </div>
 
+    <div class="images-display">
+        <div class="compressed-image">
+            <img src= "{{ url_for('static', filename='images/compressed_'+ results[0]) }}"  alt="">
+
+            {% with compressed_size = results[1] / 1024 %}
+                {% if compressed_size > 1000 %}
+                    {% with compressed_size_mb = compressed_size / 1000 %}
+                        <p> {{ "{:.2f}".format(compressed_size_mb) }} MB </p>
+                    {% endwith %}
+                {% else %}
+                    <p> {{ "{:.2f}".format(compressed_size) }} KB </p>
+                {% endif %}
+            {% endwith %}     
+        </div>
+
+        <div class="old-image">
+            <img src= "{{ url_for('static', filename='images/'+ results[0]) }}"  alt="">
+            <p> {{"{:.2f}".format(results[2]/ 1048576) }} MB </p>
+        </div>
+    </div>
+
+    <div class="download">
+        <h3> CLICK THE BUTTON BELOW TO DOWNLOAD COMPRESSED IMAGE !!!</h3>
+        <a href="{{ url_for('download_image', filename='compressed_'+ results[0]) }}"><button class="download-button">
+            Download </button></a>
+    </div>
+
+</div>
 {% endblock %}
