@@ -17,3 +17,8 @@ Flask web framework. JavaScript. CSS. HTML.
 
 Th web application is hosted on heroku and can be found [here](https://squash5.herokuapp.com/).
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> f48881ec044d96d77d283521f1f3ff8cdd92723e
