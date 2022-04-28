@@ -14,4 +14,4 @@ Flask web framework. JavaScript. CSS. HTML.
 ## *Future Plans*
 - Allow upload of multiple images
 
-Th web application is hosted on heroku and can be found [here](https://squash5.herokuapp.com/)
+The web application is hosted on heroku and can be found [here](https://squash5.herokuapp.com/)
