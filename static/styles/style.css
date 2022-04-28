@@ -221,7 +221,6 @@ input[type=submit]:hover, .download-button:hover{
         margin-left: 50px;
         width:250px;
         height:250px;
-        border: 1px solid red;
     }
     .images-display p{
         margin: 0px 50px 0 190px;
