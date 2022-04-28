@@ -13,12 +13,5 @@ Flask web framework. JavaScript. CSS. HTML.
 
 ## *Future Plans*
 - Allow upload of multiple images
-- Implement a drag and drop
 
-Th web application is hosted on heroku and can be found [here](https://squash5.herokuapp.com/).
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> f48881ec044d96d77d283521f1f3ff8cdd92723e
+Th web application is hosted on heroku and can be found [here](https://squash5.herokuapp.com/)
